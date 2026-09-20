@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>くらしのストック プライバシーポリシー</title>
+<style>
+  :root {
+    --bg: #f5faf7;
+    --surface: #ffffff;
+    --surface-alt: #eaf3ee;
+    --border: #dbe7e0;
+    --text: #182420;
+    --text-muted: #5a6961;
+    --accent: #2e7d6b;
+    --accent-soft: #e3f3ee;
+    --accent-contrast: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121815;
+      --surface: #1a2420;
+      --surface-alt: #212e28;
+      --border: #2c3c34;
+      --text: #e6ece9;
+      --text-muted: #9bb0a5;
+      --accent: #7fd1b9;
+      --accent-soft: #22392f;
+      --accent-contrast: #0d2018;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121815;
+    --surface: #1a2420;
+    --surface-alt: #212e28;
+    --border: #2c3c34;
+    --text: #e6ece9;
+    --text-muted: #9bb0a5;
+    --accent: #7fd1b9;
+    --accent-soft: #22392f;
+    --accent-contrast: #0d2018;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.doc-head {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 40px;
+  }
+
+  .mark {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--accent-contrast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .mark svg { width: 28px; height: 28px; }
+
+  .head-text .eyebrow {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin: 0 0 4px;
+  }
+
+  h1 {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    font-size: 1.55rem;
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: 0.01em;
+  }
+
+  .updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin-bottom: 36px;
+    font-variant-numeric: tabular-nums;
+  }
+  .updated .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .lede {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 44px;
+    color: var(--text);
+    font-size: 0.98rem;
+  }
+  .lede strong { color: var(--accent); }
+
+  section.clause {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 4px 20px;
+    margin-bottom: 34px;
+  }
+
+  .clause-num {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent);
+    padding-top: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .clause h2 {
+    grid-column: 2;
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+
+  .clause-body {
+    grid-column: 2;
+    color: var(--text);
+    font-size: 0.96rem;
+  }
+  .clause-body p { margin: 0 0 12px; }
+  .clause-body p:last-child { margin-bottom: 0; }
+
+  .clause-body ul {
+    margin: 10px 0 0;
+    padding-left: 1.2em;
+  }
+  .clause-body li {
+    margin-bottom: 8px;
+    color: var(--text-muted);
+  }
+  .clause-body li::marker { color: var(--accent); }
+
+  .data-table {
+    width: 100%;
+    overflow-x: auto;
+    margin: 14px 0 4px;
+  }
+  .data-table table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    font-size: 0.86rem;
+  }
+  .data-table th, .data-table td {
+    text-align: left;
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .data-table th {
+    background: var(--surface-alt);
+    color: var(--text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .data-table td { color: var(--text-muted); }
+
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 16px;
+    margin-top: 14px;
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+  .callout .label {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 44px 0;
+    border: none;
+  }
+
+  footer {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  footer .app-name {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    color: var(--text);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 480px) {
+    section.clause {
+      grid-template-columns: 1fr;
+    }
+    .clause-num { grid-column: 1; }
+    .clause h2, .clause-body { grid-column: 1; }
+  }
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+</head>
+<body>
+<div class="wrap">
+  <header class="doc-head">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="4" width="14" height="16" rx="2" fill="currentColor" fill-opacity="0.16"/>
+        <path d="M5 10h14" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M14 5.5v2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M14 12v4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="head-text">
+      <p class="eyebrow">Privacy Policy</p>
+      <h1>くらしのストック プライバシーポリシー</h1>
+    </div>
+  </header>
+
+  <span class="updated"><span class="dot"></span>最終更新日: 2026年9月20日</span>
+
+  <div class="lede">
+    OFFICE KAYAMA(以下「開発者」)は、アプリ「<strong>くらしのストック by Qualinex</strong>」(以下「本アプリ」)における利用者情報の取扱いについて、以下のとおりプライバシーポリシーを定めます。
+  </div>
+
+  <section class="clause">
+    <div class="clause-num">1</div>
+    <h2>収集する情報</h2>
+    <div class="clause-body">
+      <p>本アプリは、利用者が入力した品目データ(品名・写真・数量・保存場所・消費期限・メモ・カテゴリ等)を、利用者の端末内にのみ保存します。開発者のサーバーへ送信・収集することはありません。</p>
+      <div class="data-table">
+        <table>
+          <thead>
+            <tr><th>情報の種類</th><th>保存場所</th><th>外部送信</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>品目データ(品名・写真・数量・保存場所・期限・メモ)</td><td>端末内データベース</td><td>なし</td></tr>
+            <tr><td>バーコード番号(スキャン時)</td><td>一時的にのみ処理</td><td>Open Food Facts へ送信</td></tr>
+            <tr><td>選択した食材名(レシピ提案機能)</td><td>端末内のみ</td><td>利用者が選んだ外部アプリへ共有</td></tr>
+            <tr><td>バックアップファイル(書き出し時)</td><td>端末内ファイル</td><td>利用者が選んだ保存・共有先のみ</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">2</div>
+    <h2>バーコードスキャンによる商品情報の取得について</h2>
+    <div class="clause-body">
+      <p>本アプリのバーコードスキャン機能は、読み取った番号をオープンな食品情報データベース「Open Food Facts」に照会し、商品名や画像を自動取得します。送信されるのはバーコード番号のみで、氏名や端末情報など個人を特定できる情報は含まれません。</p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">3</div>
+    <h2>「レシピをAIに提案してもらう」機能について</h2>
+    <div class="clause-body">
+      <p>本アプリには、任意でご利用いただける「レシピをAIに提案してもらう」機能があります。本機能は、Androidの標準的な共有機能を用いて、利用者が選択した食材名を、利用者がその場で選択した端末内のアプリ(ChatGPT・Geminiなど、利用者が別途インストールしているアプリ)へ引き渡すものです。</p>
+      <ul>
+        <li>本アプリ自体がこの内容を外部サーバーへ送信することはありません。</li>
+        <li>データの送信先は、共有操作のたびに利用者自身が選択します。</li>
+        <li>送信するかどうかは利用者の任意であり、送信されるのは選択した食材名のみです。</li>
+        <li>共有先アプリにおけるデータの取扱いは、各アプリ・サービスのプライバシーポリシーに従います。</li>
+      </ul>
+      <div class="callout">
+        <span class="label">仕組みの補足</span>
+        写真やメモを他のアプリに「共有」するときと同じ、Android標準の共有機能です。本アプリが送信内容を保管したり、送信先を自動選択したりすることはありません。
+      </div>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">4</div>
+    <h2>広告・解析について</h2>
+    <div class="clause-body">
+      <p>本アプリは広告表示および第三者解析SDKを使用していません。</p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">5</div>
+    <h2>情報の第三者提供</h2>
+    <div class="clause-body">
+      <p>上記2.及び3.の場合を除き、本アプリが取得した情報を第三者に提供することはありません。</p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">6</div>
+    <h2>データの削除</h2>
+    <div class="clause-body">
+      <p>設定画面から、登録した品目・カテゴリをいつでも削除できます。アプリをアンインストールすると、端末内のすべてのデータが削除されます。</p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">7</div>
+    <h2>お問い合わせ</h2>
+    <div class="clause-body">
+      <p>本ポリシーに関するお問い合わせは下記までご連絡ください。<br><a href="mailto:officekayama8@gmail.com" style="color:var(--accent);">officekayama8@gmail.com</a></p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">8</div>
+    <h2>本ポリシーの変更</h2>
+    <div class="clause-body">
+      <p>本ポリシーの内容は、必要に応じて予告なく変更されることがあります。</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <footer>
+    <span class="app-name">くらしのストック by Qualinex</span> — 賞味期限管理と食品ロス削減を、暮らしにやさしく。<br>
+    開発: OFFICE KAYAMA
+  </footer>
+</div>
+</body>
+</html>
