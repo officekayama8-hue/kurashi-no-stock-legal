@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>くらしのストック 利用規約</title>
+<style>
+  :root {
+    --bg: #f5faf7;
+    --surface: #ffffff;
+    --surface-alt: #eaf3ee;
+    --border: #dbe7e0;
+    --text: #182420;
+    --text-muted: #5a6961;
+    --accent: #2e7d6b;
+    --accent-soft: #e3f3ee;
+    --accent-contrast: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121815;
+      --surface: #1a2420;
+      --surface-alt: #212e28;
+      --border: #2c3c34;
+      --text: #e6ece9;
+      --text-muted: #9bb0a5;
+      --accent: #7fd1b9;
+      --accent-soft: #22392f;
+      --accent-contrast: #0d2018;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121815;
+    --surface: #1a2420;
+    --surface-alt: #212e28;
+    --border: #2c3c34;
+    --text: #e6ece9;
+    --text-muted: #9bb0a5;
+    --accent: #7fd1b9;
+    --accent-soft: #22392f;
+    --accent-contrast: #0d2018;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.doc-head {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 40px;
+  }
+
+  .mark {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--accent-contrast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .mark svg { width: 28px; height: 28px; }
+
+  .head-text .eyebrow {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin: 0 0 4px;
+  }
+
+  h1 {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    font-size: 1.55rem;
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: 0.01em;
+  }
+
+  .updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin-bottom: 36px;
+    font-variant-numeric: tabular-nums;
+  }
+  .updated .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .lede {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 44px;
+    color: var(--text);
+    font-size: 0.98rem;
+  }
+  .lede strong { color: var(--accent); }
+
+  section.clause {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 4px 20px;
+    margin-bottom: 34px;
+  }
+
+  .clause-num {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent);
+    padding-top: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .clause h2 {
+    grid-column: 2;
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+
+  .clause-body {
+    grid-column: 2;
+    color: var(--text);
+    font-size: 0.96rem;
+  }
+  .clause-body p { margin: 0 0 12px; }
+  .clause-body p:last-child { margin-bottom: 0; }
+
+  .clause-body ul {
+    margin: 10px 0 0;
+    padding-left: 1.2em;
+  }
+  .clause-body li {
+    margin-bottom: 8px;
+    color: var(--text-muted);
+  }
+  .clause-body li::marker { color: var(--accent); }
+
+  .data-table {
+    width: 100%;
+    overflow-x: auto;
+    margin: 14px 0 4px;
+  }
+  .data-table table {
+    width: 100%;
+    min-width: 420px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .data-table th, .data-table td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    font-variant-numeric: tabular-nums;
+  }
+  .data-table th {
+    background: var(--surface-alt);
+    color: var(--text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .data-table td { color: var(--text-muted); }
+
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 16px;
+    margin-top: 14px;
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+  .callout .label {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 44px 0;
+    border: none;
+  }
+
+  footer {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  footer .app-name {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    color: var(--text);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 480px) {
+    section.clause {
+      grid-template-columns: 1fr;
+    }
+    .clause-num { grid-column: 1; }
+    .clause h2, .clause-body { grid-column: 1; }
+  }
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+</head>
+<body>
+<div class="wrap">
+  <header class="doc-head">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="4" width="14" height="16" rx="2" fill="currentColor" fill-opacity="0.16"/>
+        <path d="M5 10h14" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M14 5.5v2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M14 12v4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="head-text">
+      <p class="eyebrow">Terms of Service</p>
+      <h1>くらしのストック 利用規約</h1>
+    </div>
+  </header>
+
+  <span class="updated"><span class="dot"></span>最終更新日: 2026年9月20日</span>
+
+  <div class="lede">
+    本利用規約(以下「本規約」)は、OFFICE KAYAMA(以下「開発者」)が提供するアプリ
+    「<strong>くらしのストック by Qualinex</strong>」(以下「本アプリ」)の利用条件を定めるものです。
+    本アプリをダウンロード・利用した時点で、本規約に同意したものとみなします。
+  </div>
+
+  <section class="clause">
+    <div class="clause-num">1</div>
+    <h2>サービス内容</h2>
+    <div class="clause-body">
+      <p>
+        本アプリは、冷蔵庫・冷凍庫・食品棚などの在庫と消費期限を管理するためのアプリです。
+        本アプリの全機能は、後述する定期購読(サブスクリプション)プランへの加入によりご利用いただけます。
+      </p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">2</div>
+    <h2>定期購読プランと価格</h2>
+    <div class="clause-body">
+      <p>本アプリでは、以下の定期購読プランを提供します。価格はすべて税込表示です。</p>
+      <div class="data-table">
+        <table>
+          <thead>
+            <tr><th>プラン</th><th>価格</th><th>請求周期</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>月額プラン</td><td>280円</td><td>1ヶ月ごと</td></tr>
+            <tr><td>年間プラン</td><td>2,480円</td><td>1年ごと</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        料金はお使いのGoogleアカウントに登録された支払い方法を通じてGoogle Playにより請求されます。
+        決済情報自体は開発者ではなくGoogleが管理し、開発者が直接取得することはありません。
+      </p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">3</div>
+    <h2>無料トライアルについて</h2>
+    <div class="clause-body">
+      <p>
+        新規にご契約いただく際、14日間の無料トライアル期間を提供しています。
+        トライアル期間中に解約されない場合、トライアル終了時点で自動的に有料プランへ移行し、
+        選択したプランの料金が請求されます。
+      </p>
+      <div class="callout">
+        <span class="label">ご注意</span>
+        無料トライアルは同一のGoogleアカウントにつき初回契約時のみ適用される場合があります。
+        適用条件はGoogle Playの案内に従います。
+      </div>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">4</div>
+    <h2>自動更新と解約</h2>
+    <div class="clause-body">
+      <p>
+        定期購読は、契約者が解約しない限り、各請求期間の終了時に自動的に同一条件で更新されます。
+        解約は、Google Playの「定期購入」管理画面（本アプリの設定画面からも遷移できます）から、
+        いつでも行うことができます。
+      </p>
+      <p>
+        解約手続きを行った場合でも、既にお支払いいただいた請求期間の終了日までは
+        引き続き本アプリの全機能をご利用いただけます。日割りでの返金は行われません。
+      </p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">5</div>
+    <h2>返金について</h2>
+    <div class="clause-body">
+      <p>
+        返金に関するお問い合わせは、Google Playの返金ポリシーおよび手続きに従うものとします。
+        開発者が独自に返金対応を行うことはできません。
+      </p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">6</div>
+    <h2>禁止事項</h2>
+    <div class="clause-body">
+      <ul>
+        <li>本アプリの複製、改変、逆コンパイル等の行為</li>
+        <li>本アプリの不正利用、または第三者への譲渡・貸与</li>
+        <li>その他、開発者が不適切と判断する行為</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">7</div>
+    <h2>免責事項</h2>
+    <div class="clause-body">
+      <p>
+        本アプリは消費期限の目安を自動計算・通知する機能を提供しますが、実際の食品の安全性を
+        保証するものではありません。食品の状態は必ずご自身でご確認のうえ、ご利用ください。
+        本アプリの利用により生じた損害について、開発者は法令上許容される範囲で責任を負いません。
+      </p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">8</div>
+    <h2>お問い合わせ</h2>
+    <div class="clause-body">
+      <p>本規約に関するお問い合わせは下記までご連絡ください。<br><a href="mailto:officekayama8@gmail.com" style="color:var(--accent);">officekayama8@gmail.com</a></p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-num">9</div>
+    <h2>本規約の変更</h2>
+    <div class="clause-body">
+      <p>本規約の内容は、必要に応じて予告なく変更されることがあります。重要な変更を行う場合は、本ページの「最終更新日」を更新してお知らせします。</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <footer>
+    <span class="app-name">くらしのストック by Qualinex</span> — 賞味期限管理と食品ロス削減を、暮らしにやさしく。<br>
+    開発: OFFICE KAYAMA
+  </footer>
+</div>
+</body>
+</html>
